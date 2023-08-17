@@ -52,18 +52,31 @@ function App() {
             </h1>
           </Col>
           <Col className="nav-search">
-            <input
-              type="text"
-              id="myInput"
-              value={searchBarItem}
-              onChange={handleItemChange}
-              placeholder="Search.."
-            />
-            <Link to={`/list/${searchBarItem}`}>
-              <Button variant="light" onClick={onClick} className="searchName">
-                <FontAwesomeIcon icon={faSearch} />
-              </Button>
-            </Link>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault(); // Prevent default form submission
+                onClick(); // Trigger search
+              }}
+              className="nav-search"
+            >
+              <input
+                type="text"
+                id="myInput"
+                value={searchBarItem}
+                onChange={handleItemChange}
+                placeholder="Search.."
+              />
+              <Link to={`/list/${searchBarItem}`}>
+                <Button
+                  type='submit'
+                  variant="light"
+                  onClick={onClick}
+                  lassName="searchName">
+                  <FontAwesomeIcon icon={faSearch} />
+                </Button>
+              </Link>
+            </form>
+
           </Col>
         </Row>
       </Container>

@@ -40,10 +40,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
 
 :root {
-  --primary: #436E99;
+  --primary: #436e99;
   --secondary: #F5F5F4;
-  --text: #252A38;
-  --accent: #b19273;
+  --text: #1D263B;
+  --accent: #8093F1;
   --grey: #B7BAB9;
 }
 
@@ -111,6 +111,10 @@ a .card {
 
 .card-title {
   color: var(--text);
+  height: 3rem; /* Adjust as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
 }
 
 a {
